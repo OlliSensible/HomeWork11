@@ -1,9 +1,15 @@
 package Task3;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
-public class sortNumbersInArray {
+public class SortArray {
 
-    public static void main(String[] args) {
-        String[] nouInSort = {"1, 2, 0", "4, 5"};
-        System.out.println(nouInSort.toString());
+    public static String sortNumbersInArray(String[] args) {
+        return Arrays.stream(args)
+                .flatMap(s -> Arrays.stream(s.split(",\\s*")))
+                .map(Integer::parseInt)
+                .sorted()
+                .map(String::valueOf)
+                .collect(Collectors.joining(", "));
     }
 }

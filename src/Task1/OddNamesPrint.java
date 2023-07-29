@@ -10,7 +10,7 @@ public class OddNamesPrint {
         NamesFileReader namesFileReader = new NamesFileReader();
         List<String> namesList = namesFileReader.readNamesFromFile(file);
         IntStream.range(0, namesList.size())
-                .filter(i -> i % 2 == 0)
-                .forEach(i -> System.out.println((i + 1) + ". Name: " + namesList.get(i)));
+                .filter(i -> i % 2 != 0)
+                .forEach(i -> System.out.println(i + ". Name: " + namesList.get(i)));
     }
 }
